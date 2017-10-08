@@ -1,0 +1,67 @@
+﻿@model UIA.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.flight_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flight_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flight_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flight_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plane_company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plane_company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plane_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plane_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Book", "Create", "Bookings", new { id = Model.flight_id }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

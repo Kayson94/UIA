@@ -1,0 +1,60 @@
+﻿@model IEnumerable<UIA.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+    <h4>Customer</h4>
+    <hr />
+@foreach (var item in Model)
+{
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addresss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.addresss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.phone)
+        </dd>
+
+    </dl>
+<p>
+    @Html.ActionLink("Edit", "EditCustomer", new { id = item.cust_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+}

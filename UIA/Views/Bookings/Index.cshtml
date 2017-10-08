@@ -1,0 +1,68 @@
+﻿@model IEnumerable<UIA.ViewModels.ShowBookingViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flight_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flight_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plane_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plane_company)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flight_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flight_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plane_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plane_company)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.booking_id })
+        </td>
+    </tr>
+}
+
+</table>
