@@ -63,7 +63,7 @@ namespace UIA.Controllers
         public ActionResult Create(int id)
         {// want get customer name form customer table
             int sessionUserID = Convert.ToInt32(User.Identity.Name.Split('|')[0].ToString());
-            var booking_details = (from f in db.Flights 
+            var booking_details = (from f in db.Flights
                                    where f.flight_id == id
                                    select new ShowBookingViewModel
                                    {
@@ -72,9 +72,11 @@ namespace UIA.Controllers
                                        flight_date = f.flight_date,
                                        flight_time = f.flight_time,
                                        duration = f.duration,
+                                       depart_place = f.depart_place,
                                        destination = f.destination,
                                        plane_name = f.plane_name,
-                                       plane_company = f.plane_company
+                                       plane_company = f.plane_company,
+                                       price = f.price
                                    }).FirstOrDefault();
             return View(booking_details);
         }

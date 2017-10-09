@@ -25,6 +25,9 @@
             @Html.DisplayNameFor(model => model.duration)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.depart_place)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.destination)
         </th>
         <th>
@@ -32,6 +35,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.plane_company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
         </th>
         <th></th>
     </tr>
@@ -51,6 +57,9 @@
             @Html.DisplayFor(modelItem => item.duration)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.depart_place)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.destination)
         </td>
         <td>
@@ -58,6 +67,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.plane_company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
             @Html.ActionLink("Details", "Details", new { id=item.booking_id })

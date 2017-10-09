@@ -16,8 +16,10 @@ namespace UIA.ViewModels
         public DateTime flight_date { get; set; }
         public TimeSpan flight_time { get; set; }
         public String duration { get; set; }
+        public String depart_place { get; set; }
         public String destination { get; set; }
         public String plane_company { get; set; }
         public String plane_name { get; set; }
+        public int price { get; set; }
     }
 }
