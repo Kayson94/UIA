@@ -91,4 +91,3 @@ C:\Users\Kayson Tan\source\repos\UIA\UIA\bin\Microsoft.AI.Web.xml
 C:\Users\Kayson Tan\source\repos\UIA\UIA\obj\Debug\UIA.csproj.CoreCompileInputs.cache
 C:\Users\Kayson Tan\source\repos\UIA\UIA\obj\Debug\UIA.dll
 C:\Users\Kayson Tan\source\repos\UIA\UIA\obj\Debug\UIA.pdb
-C:\Users\Kayson Tan\source\repos\UIA\UIA\obj\Debug\UIA.csprojResolveAssemblyReference.cache

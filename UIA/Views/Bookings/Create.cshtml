@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.duration, "duration", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.duration, new { @class = "form-control", @readonly = "true" })
+                @Html.TextBoxFor(model => model.duration, new { @class = "form-control", @readonly = "true" }) Mins
             </div>
         </div>
 
@@ -83,7 +83,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.price, "price", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.price, new { @class = "form-control", @readonly = "true" })
+                RM @Html.TextBoxFor(model => model.price, new { @class = "form-control", @readonly = "true" })
             </div>
         </div>
 

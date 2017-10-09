@@ -15,16 +15,9 @@ namespace UIA.Models
     public partial class Booking
     {
         public int booking_id { get; set; }
-        public int cust_id { get; set; }
-        public String name { get; set; }
         public int flight_id { get; set; }
-        public DateTime flight_date { get; set; }
-        public TimeSpan flight_time { get; set; }
-        public String duration { get; set; }
-        public String destination { get; set; }
-        public String plane_company { get; set; }
-        public String plane_name { get; set; }
-
+        public int cust_id { get; set; }
+    
         public virtual Customer Customer { get; set; }
         public virtual Flight Flight { get; set; }
     }

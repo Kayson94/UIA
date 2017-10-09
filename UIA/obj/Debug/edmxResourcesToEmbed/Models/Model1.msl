@@ -29,9 +29,11 @@
           <ScalarProperty Name="flight_date" ColumnName="flight_date" />
           <ScalarProperty Name="flight_time" ColumnName="flight_time" />
           <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="depart_place" ColumnName="depart_place" />
           <ScalarProperty Name="destination" ColumnName="destination" />
           <ScalarProperty Name="plane_company" ColumnName="plane_company" />
           <ScalarProperty Name="plane_name" ColumnName="plane_name" />
+          <ScalarProperty Name="price" ColumnName="price" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

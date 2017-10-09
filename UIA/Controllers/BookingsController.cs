@@ -34,8 +34,10 @@ namespace UIA.Controllers
                                        flight_time = f.flight_time,
                                        duration = f.duration,
                                        destination = f.destination,
+                                       depart_place = f.depart_place,
                                        plane_name = f.plane_name,
-                                       plane_company = f.plane_company
+                                       plane_company = f.plane_company,
+                                       price = f.price
                                    }).ToList();
 
             return View(booking_details);
@@ -46,16 +48,28 @@ namespace UIA.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Booking booking = db.Bookings.Find(id);
-            if (booking == null)
-            {
-                return HttpNotFound();
-            }
-            return View(booking);
+            int sessionUserID = Convert.ToInt32(User.Identity.Name.Split('|')[0].ToString());
+            var booking_details = (from f in db.Flights
+                                   join b in db.Bookings on f.flight_id equals b.flight_id
+                                   join c in db.Customers on b.cust_id equals c.cust_id
+                                   where c.cust_id == sessionUserID & b.booking_id == id
+                                   select new ShowBookingViewModel
+                                   {
+                                       booking_id = b.booking_id,
+                                       cust_id = c.cust_id,
+                                       name = c.name,
+                                       flight_id = f.flight_id,
+                                       flight_date = f.flight_date,
+                                       flight_time = f.flight_time,
+                                       duration = f.duration,
+                                       destination = f.destination,
+                                       depart_place = f.depart_place,
+                                       plane_name = f.plane_name,
+                                       plane_company = f.plane_company,
+                                       price = f.price
+                                   }).FirstOrDefault();
+
+            return View(booking_details);
         }
 
         // GET: Bookings/Create

@@ -32,9 +32,11 @@
           <Property Name="flight_date" Type="date" Nullable="false" />
           <Property Name="flight_time" Type="time" Precision="7" Nullable="false" />
           <Property Name="duration" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="depart_place" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="destination" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="plane_company" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="plane_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -45,7 +47,7 @@
           <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Booking__cust_id__5441852A">
+        <Association Name="FK__Booking__cust_id__72C60C4A">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -57,7 +59,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__flight___534D60F1">
+        <Association Name="FK__Booking__flight___71D1E811">
           <End Role="Flight" Type="Self.Flight" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -86,11 +88,11 @@
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Flight" EntityType="Self.Flight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Booking__cust_id__5441852A" Association="Self.FK__Booking__cust_id__5441852A">
+          <AssociationSet Name="FK__Booking__cust_id__72C60C4A" Association="Self.FK__Booking__cust_id__72C60C4A">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__flight___534D60F1" Association="Self.FK__Booking__flight___534D60F1">
+          <AssociationSet Name="FK__Booking__flight___71D1E811" Association="Self.FK__Booking__flight___71D1E811">
             <End Role="Flight" EntitySet="Flight" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
@@ -111,8 +113,8 @@
           <Property Name="booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="flight_id" Type="Int32" Nullable="false" />
           <Property Name="cust_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Booking__cust_id__5441852A" FromRole="Booking" ToRole="Customer" />
-          <NavigationProperty Name="Flight" Relationship="Self.FK__Booking__flight___534D60F1" FromRole="Booking" ToRole="Flight" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Booking__cust_id__72C60C4A" FromRole="Booking" ToRole="Customer" />
+          <NavigationProperty Name="Flight" Relationship="Self.FK__Booking__flight___71D1E811" FromRole="Booking" ToRole="Flight" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -124,7 +126,7 @@
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="addresss" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="Int32" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__cust_id__5441852A" FromRole="Customer" ToRole="Booking" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__cust_id__72C60C4A" FromRole="Customer" ToRole="Booking" />
           <NavigationProperty Name="Logins" Relationship="Self.FK__Login__cust_id__38996AB5" FromRole="Customer" ToRole="Login" />
         </EntityType>
         <EntityType Name="Flight">
@@ -135,10 +137,12 @@
           <Property Name="flight_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="flight_time" Type="Time" Nullable="false" Precision="7" />
           <Property Name="duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="depart_place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="plane_company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="plane_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__flight___534D60F1" FromRole="Flight" ToRole="Booking" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__flight___71D1E811" FromRole="Flight" ToRole="Booking" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -150,7 +154,7 @@
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Login__cust_id__38996AB5" FromRole="Login" ToRole="Customer" />
         </EntityType>
-        <Association Name="FK__Booking__cust_id__5441852A">
+        <Association Name="FK__Booking__cust_id__72C60C4A">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -162,7 +166,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Booking__flight___534D60F1">
+        <Association Name="FK__Booking__flight___71D1E811">
           <End Role="Flight" Type="Self.Flight" Multiplicity="1" />
           <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,11 +195,11 @@
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Flights" EntityType="Self.Flight" />
           <EntitySet Name="Logins" EntityType="Self.Login" />
-          <AssociationSet Name="FK__Booking__cust_id__5441852A" Association="Self.FK__Booking__cust_id__5441852A">
+          <AssociationSet Name="FK__Booking__cust_id__72C60C4A" Association="Self.FK__Booking__cust_id__72C60C4A">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Booking__flight___534D60F1" Association="Self.FK__Booking__flight___534D60F1">
+          <AssociationSet Name="FK__Booking__flight___71D1E811" Association="Self.FK__Booking__flight___71D1E811">
             <End Role="Flight" EntitySet="Flights" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
@@ -238,9 +242,11 @@
                 <ScalarProperty Name="flight_date" ColumnName="flight_date" />
                 <ScalarProperty Name="flight_time" ColumnName="flight_time" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="depart_place" ColumnName="depart_place" />
                 <ScalarProperty Name="destination" ColumnName="destination" />
                 <ScalarProperty Name="plane_company" ColumnName="plane_company" />
                 <ScalarProperty Name="plane_name" ColumnName="plane_name" />
+                <ScalarProperty Name="price" ColumnName="price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

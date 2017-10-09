@@ -46,7 +46,7 @@
             @Html.DisplayFor(modelItem => item.flight_time)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.duration)
+            @Html.DisplayFor(modelItem => item.duration) Mins
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.depart_place)
@@ -61,7 +61,7 @@
             @Html.DisplayFor(modelItem => item.plane_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.price)
+            RM @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
             @Html.ActionLink("Details", "Details", new { id=item.flight_id })

@@ -11,8 +11,7 @@ namespace UIA.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Flight
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,7 +21,6 @@ namespace UIA.Models
         }
     
         public int flight_id { get; set; }
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public System.DateTime flight_date { get; set; }
         public System.TimeSpan flight_time { get; set; }
         public string duration { get; set; }
@@ -31,7 +29,7 @@ namespace UIA.Models
         public string plane_company { get; set; }
         public string plane_name { get; set; }
         public int price { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Bookings { get; set; }
     }

@@ -27,8 +27,8 @@ namespace UIA.Models
         public string email { get; set; }
         public string addresss { get; set; }
         public Nullable<int> phone { get; set; }
-        public string password { get; set; }
         public string username { get; set; }
+        public string password { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Bookings { get; set; }
